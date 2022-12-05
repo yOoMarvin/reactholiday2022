@@ -7,8 +7,6 @@ export default function NavLink({ href, children }) {
     let segment = useSelectedLayoutSegments()
     let active = href === `/${segment}`
 
-    console.log({ href, active })
-
     return (
         <Link
             className={
