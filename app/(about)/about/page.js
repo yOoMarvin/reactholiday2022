@@ -24,7 +24,7 @@ export default function About() {
             </div>
             <Link
                 className="text-medium text-blue-500 hover:text-blue-700"
-                href="/about/contact"
+                href="/contact"
             >
                 📫 Say hi.
             </Link>
