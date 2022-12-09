@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
                 <header className="mx-auto flex w-full flex-row items-center justify-center space-x-4">
                     <NavLink href="/">Home</NavLink>
                     <NavLink href="/about">About</NavLink>
+                    <NavLink href="/quotes">Quotes</NavLink>
                 </header>
                 {children}
             </body>
