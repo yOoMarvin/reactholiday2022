@@ -1,5 +1,9 @@
 async function fetchData() {
-    const res = await fetch('https://api.quotable.io/random')
+    //force a server error
+    //const res = await fetch('https://httpstat.us/500')
+
+    //regular request
+    const res = await fetch('https://api.quotable.io/randoms')
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
@@ -12,7 +16,7 @@ export default async function QuotesPage() {
     console.log(data)
 
     // let the page wait
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    //await new Promise((resolve) => setTimeout(resolve, 1000))
 
     return (
         <div className="flex flex-col">
