@@ -1,9 +1,13 @@
+import { notFound } from 'next/navigation'
+
 async function fetchData() {
-    //force a server error
-    //const res = await fetch('https://httpstat.us/500')
+    //force an error
+    // const res = await fetch('https://httpstat.us/404')
+    // if (!res.ok) return undefined
+    // return res.json()
 
     //regular request
-    const res = await fetch('https://api.quotable.io/randoms')
+    const res = await fetch('https://api.quotable.io/random')
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
@@ -17,6 +21,11 @@ export default async function QuotesPage() {
 
     // let the page wait
     //await new Promise((resolve) => setTimeout(resolve, 1000))
+
+    //check if page is available
+    if (!data) {
+        notFound()
+    }
 
     return (
         <div className="flex flex-col">
