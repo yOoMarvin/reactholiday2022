@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
                     <NavLink href="/">Home</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/quotes">Quotes</NavLink>
+                    <NavLink href="/pokeapp">Pokemon App</NavLink>
                 </header>
                 {children}
             </body>
