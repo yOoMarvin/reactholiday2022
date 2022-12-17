@@ -11,7 +11,7 @@ export default async function PokeappPage() {
                         key={pokemon.name}
                         href={'/pokeapp/' + pokemon.name}
                     >
-                        {pokemon.name}
+                        <span className="capitalize">{pokemon.name}</span>
                     </NavLink>
                 ))}
             </div>

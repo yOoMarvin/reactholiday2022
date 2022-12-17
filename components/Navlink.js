@@ -1,11 +1,18 @@
 'use client'
 
 import Link from 'next/Link'
-import { useSelectedLayoutSegments } from 'next/navigation'
+import {
+    usePathname,
+    useSelectedLayoutSegment,
+    useSelectedLayoutSegments,
+} from 'next/navigation'
 
 export default function NavLink({ href, children }) {
-    let segment = useSelectedLayoutSegments()
-    let active = href === `/${segment}`
+    let path = usePathname()
+    let active = path.includes(href)
+
+    // let segment = useSelectedLayoutSegment
+    // let active = href === `/${segment}`
 
     return (
         <Link
