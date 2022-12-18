@@ -1,11 +1,18 @@
+import { notFound } from 'next/navigation'
+
 async function fetchPokemonByName(name) {
     let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-
+    if (!res.ok) {
+        return undefined
+    }
     return await res.json()
 }
 
 export default async function PokemonPage({ params }) {
     let pokemon = await fetchPokemonByName(params.name)
+    if (!pokemon) {
+        notFound()
+    }
     //console.log(pokemon)
 
     return (

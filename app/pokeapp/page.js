@@ -2,11 +2,14 @@ import Link from 'next/Link'
 
 export default async function PokeappPage() {
     let res = await fetch('https://pokeapi.co/api/v2/pokemon')
+    if (!res.ok) {
+        throw Error('Failed to fetch.')
+    }
     let data = await res.json()
 
     return (
         <main>
-            <div className="grid grid-cols-6 gap-4">
+            <div className="grid grid-cols-4 gap-4">
                 {data.results.map((pokemon) => (
                     <Link
                         key={pokemon.name}
