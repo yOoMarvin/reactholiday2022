@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 async function fetchPokemonByName(name) {
@@ -28,6 +29,13 @@ export default async function PokemonPage({ params }) {
                     </div>
                 ))}
             </div>
+            <Image
+                className="mt-4"
+                src={pokemon.sprites.front_default}
+                alt={`$pokemon.name} front`}
+                width="96"
+                height="96"
+            />
         </main>
     )
 }
